@@ -1,0 +1,85 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+RPCError: ext.flutter.brightnessOverride: (-32603) ext.flutter.brightnessOverride: Unexpected error from chrome devtools:
+text: Uncaught (in promise)
+exception:
+  preview: null
+  description: null
+  type: string
+  value: Unexpected null value.
+attempted JS eval: `require("dart_sdk").developer.invokeExtension(
+    "ext.flutter.brightnessOverride", JSON.stringify({}));
+`
+
+#0      handleErrorIfPresent (package:dwds/src/utilities/shared.dart:96:5)
+#1      getResultOrHandleError (package:dwds/src/utilities/shared.dart:108:3)
+#2      AppInspector.jsEvaluate (package:dwds/src/debugging/inspector.dart:323:20)
+<asynchronous suspension>
+#3      StackZoneSpecification._registerUnaryCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:124:15)
+<asynchronous suspension>
+
+
+```
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:1765:45)
+#1      VmService._call (package:vm_service/src/vm_service.dart:2292:21)
+#2      VmService.callServiceExtension (package:vm_service/src/vm_service.dart:2263:14)
+#3      FlutterVmService._checkedCallServiceExtension (package:flutter_tools/src/vmservice.dart:839:28)
+#4      FlutterVmService.invokeFlutterExtensionRpcRaw (package:flutter_tools/src/vmservice.dart:858:49)
+#5      FlutterVmService.flutterBrightnessOverride (package:flutter_tools/src/vmservice.dart:819:48)
+#6      ResidentHandlers.debugToggleBrightness (package:flutter_tools/src/resident_runner.dart:883:72)
+<asynchronous suspension>
+#7      TerminalHandler.processTerminalInput (package:flutter_tools/src/resident_runner.dart:1801:7)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel master, 3.8.0-13.0.pre.54, on Microsoft Windows [version 10.0.19044.2728], locale fr-TN)
+    [32m•[39m Flutter version 3.8.0-13.0.pre.54 on channel master at C:\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 22e17bb710 (5 weeks ago), 2023-02-16 03:46:23 -0500
+    [32m•[39m Engine revision ea1d087c49
+    [32m•[39m Dart version 3.0.0 (build 3.0.0-241.0.dev)
+    [32m•[39m DevTools version 2.21.1
+
+[32m[✓][39m Windows Version (Installed version of Windows is version 10 or higher)
+
+[33m[!][39m Android toolchain - develop for Android devices (Android SDK version 33.0.1)
+    [32m•[39m Android SDK at C:\Users\elbootic.com\AppData\Local\Android\sdk
+    [32m•[39m Platform android-33, build-tools 33.0.1
+    [32m•[39m Java binary at: C:\Program Files\Android\Android Studio\jbr\bin\java
+    [32m•[39m Java version OpenJDK Runtime Environment (build 11.0.15+0-b2043.56-9505619)
+    [33m![39m Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+
+[32m[✓][39m Chrome - develop for the web
+    [32m•[39m Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[32m[✓][39m Android Studio (version 2022.1)
+    [32m•[39m Android Studio at C:\Program Files\Android\Android Studio
+    [32m•[39m Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    [32m•[39m Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    [32m•[39m Java version OpenJDK Runtime Environment (build 11.0.15+0-b2043.56-9505619)
+
+[32m[✓][39m VS Code (version 1.76.2)
+    [32m•[39m VS Code at C:\Users\elbootic.com\AppData\Local\Programs\Microsoft VS Code
+    [32m•[39m Flutter extension version 3.60.0
+
+[32m[✓][39m Connected device (2 available)
+    [32m•[39m Chrome (web) • chrome • web-javascript • Google Chrome 111.0.5563.65
+    [32m•[39m Edge (web)   • edge   • web-javascript • Microsoft Edge 110.0.1587.63
+
+[32m[✓][39m Network resources
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 1 category.
+```
